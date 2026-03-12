@@ -1,11 +1,16 @@
 @font-face {
     font-family: "MorfinSans";
-    src: url(fonts/MorfinSans-Regular.ttf);
+    src: url(fonts/MorfinSans/MorfinSans-Regular.ttf);
 }
 
 @font-face {
-    font-family: "Metamorphous";
-    src: url(fonts/Metamorphous-Regular.ttf);
+    font-family: "PT-Serif-Regular";
+    src: url(fonts/PT_Serif/PTSerif-Regular.ttf);
+}
+
+@font-face {
+    font-family: "PT-Serif-Bold";
+    src: url(fonts/PT_Serif/PTSerif-Bold.ttf);
 }
 
 html {
@@ -41,7 +46,7 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(images/header-pic.webp);
+    background-image: url(images/backgrounds/header-pic.webp);
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
@@ -136,7 +141,7 @@ header::before {
 .about-section {
     display: flex;
     flex-wrap: wrap;
-    font-family: "Metamorphous";
+    font-family: "PT-Serif";
     background-color: #FCF9F4;
     color: black;
 }
@@ -161,7 +166,7 @@ h2, h3, h4, h5 {
 
 .about-heading-photo {
     height: 55vh;
-    background-image: url("images/about1.webp");
+    background-image: url("images/backgrounds/about1.webp");
     background-position: center;
     background-size: cover;
 }
@@ -203,7 +208,7 @@ h2, h3, h4, h5 {
 
 .about-section-end-pic {
     width: 40%;
-    background-image: url(images/about2.webp);
+    background-image: url(images/backgrounds/about2.webp);
     background-size: cover;
     background-position: center;
 }
@@ -212,7 +217,7 @@ h2, h3, h4, h5 {
     display: flex;
     background-color: #FCF9F4;
     color: black;
-    background-image: url(images/open-call.webp);
+    background-image: url(images/backgrounds/open-call.webp);
     background-size: contain;
     background-position: left;
     background-repeat: no-repeat;
@@ -229,7 +234,7 @@ h2, h3, h4, h5 {
     flex-direction: column;
     justify-content: center;
     font-size: 1.5em;
-    font-family: "Metamorphous";
+    font-family: "PT-Serif";
     padding-right: 10vw;
 }
 
@@ -297,8 +302,15 @@ h2, h3, h4, h5 {
     width: 100%;
     padding-right: 3vw;
     margin-left: 5vw;
-    font-family: "Metamorphous";
+    font-family: "PT-Serif";
     font-size: 1.5em;
+}
+
+.films-list-text p:nth-child(1) {
+    font-family: "PT-Serif-Bold";
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.3rem;
 }
 
 .films-list-text p:nth-child(2) {
