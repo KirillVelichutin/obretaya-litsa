@@ -37,6 +37,8 @@ body {
 header {
     position: relative;
     height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 header::before {
@@ -46,7 +48,7 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(images/backgrounds/about1.webp);
+    background-image: url(images/backgrounds/header-pic.webp);
     background-size: cover;
     background-position: bottom;
     filter: saturate(0%) brightness(0.7);
@@ -67,33 +69,47 @@ h1 {
 }
 
 .igraya-so-vremenem {
-    padding-left: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 2.5rem 3rem;
+}
+
+.igraya-so-vremenem h1 {
+    line-height: 0.92;
 }
 
 .igraya-so-vremenem p {
-    margin-top: 2rem;
     font-family: "MorfinSans";
     font-size: clamp(1.5rem, 4vw, 2rem);
-    letter-spacing: 2vw;
+    letter-spacing: clamp(0.3rem, 1.4vw, 1.6rem);
+    line-height: 1.2;
 }
 
 .page-navigation {
     width: 100%;
-    padding-top: 3vh;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 1rem 2.5rem 0.75rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 2rem;
+    align-items: end;
     background-color: #FCF9F4;
     color: #322E2B;
 }
 
+.page-navigation h1 {
+    align-self: end;
+    line-height: 0.9;
+    padding-bottom: 0.15rem;
+}
+
 .navigation-links {
-    width: 35%;
+    width: auto;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: end;
+    justify-content: flex-end;
+    gap: clamp(1rem, 2vw, 2.5rem);
     list-style: none;
     font-family: "MorfinSans";
 }
@@ -133,8 +149,8 @@ h1 {
 }
 
 .about-section {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     font-family: "PT-Serif";
     background-color: #FCF9F4;
     color: black;
@@ -143,11 +159,11 @@ h1 {
 .about-section > div {
     border-right: 2px solid black;
     border-bottom: 2px solid black;
-    font-size: 24px;
+    font-size: clamp(1.1rem, 1.5vw, 1.5rem);
 }
 
 .about-section-heading {
-    width: 37%;
+    grid-column: span 5;
     letter-spacing: 0.1rem;
     overflow: hidden;
 }
@@ -160,9 +176,10 @@ h2, h3, h4, h5 {
 
 .about-heading-photo {
     height: 55vh;
-    background-image: url("images/backgrounds/header-pic.webp");
+    background-image: url("images/backgrounds/about1.webp");
     background-position: center;
     background-size: cover;
+    filter: grayscale();
 }
 
 .abt-sec-num {
@@ -171,40 +188,41 @@ h2, h3, h4, h5 {
 }
 
 .about-section-text-conteiner-1 {
-    width: 63%;
+    grid-column: span 7;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 6vh;
+    gap: 1rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 .about-section-text-conteiner-1 p:nth-child(2) {
-    width: 67%;
-    margin-bottom: 2em;
+    max-width: 26rem;
 }
 
 .about-section-text-conteiner-1 p:nth-child(3) {
     text-align: end;
-    align-self: last baseline;
-    width: 50%;
+    align-self: flex-end;
+    max-width: 20rem;
 }
 
 .about-section-text-conteiner-2 {
-    width: 30%;
-    padding: 6vh;
+    grid-column: span 4;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .about-section-text-conteiner-3 {
-    width: 30%;
-    padding: 6vh;
-    padding-bottom: 17vh;
+    grid-column: span 4;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    min-height: 19rem;
 }
 
 .about-section-end-pic {
-    width: 40%;
+    grid-column: span 4;
     background-image: url(images/backgrounds/about2.webp);
     background-size: cover;
     background-position: center;
+    min-height: 19rem;
 }
 
 .open-call-section {
@@ -353,7 +371,7 @@ footer div {
     float: inline-end;
 }
 
-.look-for-anons-conteiner ul {
+.socials {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -383,36 +401,30 @@ footer div {
 }
 
 @media screen and (max-width: 1024px) {
-    .header-panel {
-        justify-content: right;
-    }
-
-    .header-panel::before {
-        content: "///";
-        color: #FCF9F4;
-        position: absolute;
-        font-weight: 900;
-        top: 2vh;
-        left: 5vw;
-        font-size: 3rem;
-    }
-
     .page-navigation {
-        padding-left: 1rem;
+        padding: 1rem 1rem 0.7rem;
     }
     
     .navigation-links {
+        margin-right: 0.7rem;
         display: flex;
         flex-direction: column;
         width: auto;
+        align-items: flex-end;
+        gap: 0.35rem;
     }
     
-    .navigation-links li {
-        margin-top: 0.4rem;
+    .page-navigation h1 {
+        font-size: clamp(1.9rem, 4.6vw, 3.4rem);
     }
     
     .igraya-so-vremenem {
-        padding-left: 1rem;
+        padding: 0.85rem 1rem 2.5rem;
+    }
+
+    .igraya-so-vremenem p {
+        font-size: 1.15rem;
+        letter-spacing: 0.45rem;
     }
 
     .btn {
@@ -420,15 +432,29 @@ footer div {
     }
 
     .about-heading-photo {
-        height: 450px;
+        height: 380px;
+    }
+
+    .about-section-heading,
+    .about-section-text-conteiner-1,
+    .about-section-text-conteiner-2,
+    .about-section-text-conteiner-3,
+    .about-section-end-pic {
+        grid-column: span 6;
     }
 
     .about-section-text-conteiner-2 {
-        padding: 5vh 2vw;
+        padding: 4vh 2vw;
     }
 
     .about-section-text-conteiner-3 {
-        padding: 5vh 3vw;
+        padding: 4vh 3vw;
+        min-height: 17rem;
+    }
+
+    .about-section-end-pic {
+        grid-column: 1 / -1;
+        min-height: 17rem;
     }
 
     .open-call-section {
@@ -476,7 +502,7 @@ footer div {
         margin: 5vh auto 0;
     }
 
-    .look-for-anons-conteiner ul {
+    .socials {
         margin: 10vh auto 0;
     }
 
@@ -486,8 +512,17 @@ footer div {
 }
 
 @media screen and (max-width: 890px) {
+    header {
+        height: 80vh;
+    }
+
     .about-section > div {
         font-size: 1.3rem;
+    }
+
+    .about-section-text-conteiner-1 p:nth-child(2),
+    .about-section-text-conteiner-1 p:nth-child(3) {
+        max-width: none;
     }
 
     .open-call-text-conteiner {
@@ -520,7 +555,7 @@ footer div {
         width: 60vw;
     }
 
-    .look-for-anons-conteiner ul {
+    .socials {
         gap: 0;
         margin: 12vh auto 15vh;
     }
@@ -556,30 +591,85 @@ footer div {
         width: 230px;
     }
 
-    .header-panel::before {
-        font-size: 1.5rem;
+    header {
+        height: 56vh;
+    }
+
+    .page-navigation {
+        padding: 0.9rem 1rem 0.65rem;
+        column-gap: 1rem;
+    }
+
+    .page-navigation h1 {
+        font-size: 1.55rem;
+        letter-spacing: 0.08rem;
+    }
+
+    .navigation-links {
+        gap: 0.25rem;
+    }
+
+    .navigation-links a {
+        font-size: 1rem;
+    }
+
+    .igraya-so-vremenem {
+        padding: 0.75rem 1rem 2rem;
+        gap: 0.65rem;
+    }
+
+    .igraya-so-vremenem h1 {
+        max-width: 9ch;
+        font-size: clamp(2.1rem, 10vw, 3.2rem);
+        letter-spacing: 0.08rem;
+        line-height: 0.95;
+    }
+
+    .igraya-so-vremenem p {
+        font-size: 0.9rem;
+        letter-spacing: 0.25rem;
     }
 
     .about-section {
-        flex-direction: column;
-        flex-wrap: nowrap;
+        grid-template-columns: 1fr;
     }
 
     .about-section div {
-        width: 100%;
+        grid-column: 1 / -1;
         border-right: none;
     }
 
     .about-section-text-conteiner-1 {
-        padding: 3vh;
+        padding: 1.25rem 1rem;
         font-size: 1.1rem;
         line-height: 1.45;
     }
 
     .about-section-text-conteiner-2, .about-section-text-conteiner-3 {
-        padding: 10vh 6vh;
+        padding: 2rem 1rem;
         font-size: 1.1rem;
         line-height: 1.5;
+    }
+
+    .about-section-text-conteiner-1 p:nth-child(2),
+    .about-section-text-conteiner-1 p:nth-child(3) {
+        max-width: none;
+        width: 100%;
+    }
+
+    .about-section-text-conteiner-1 p:nth-child(3) {
+        text-align: start;
+        align-self: auto;
+    }
+
+    .about-section-end-pic,
+    .about-section-text-conteiner-3 {
+        min-height: 0;
+    }
+
+    .about-heading-photo {
+        height: 32vh;
+        min-height: 220px;
     }
 
     h2, h3, h4, h5 {
@@ -673,7 +763,7 @@ footer div {
         color: #A43D3E;
         background: none;
         border: none;
-        font-size: 2em;
+        font-size: 2rem;
         height: 100%;
     }
 
@@ -692,14 +782,18 @@ footer div {
     }
 
     .look-for-anons {
-        font-size: 2.3em;
+        font-size: 1.3rem;
         line-height: 1.3;
-        margin: 23vh auto 0;
+        margin: 6rem auto 0;
     }
 
     .ask-question-conteiner {
-        font-size: 1.35em;
+        font-size: 1.15rem;
         line-height: 1.35;
+    }
+
+    .socials {
+        margin: 4rem auto;
     }
 
     .rights {
