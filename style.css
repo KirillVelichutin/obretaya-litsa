@@ -159,7 +159,8 @@ h1 {
 .about-section > div {
     border-right: 2px solid black;
     border-bottom: 2px solid black;
-    font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+    font-size: clamp(1rem, 0.82rem + 0.7vw, 1.35rem);
+    line-height: 1.5;
 }
 
 .about-section-heading {
@@ -185,6 +186,8 @@ h2, h3, h4, h5 {
 .abt-sec-num {
     font-family: "MorfinSans";
     margin-bottom: 1em;
+    font-size: clamp(1rem, 0.88rem + 0.45vw, 1.35rem);
+    line-height: 1;
 }
 
 .about-section-text-conteiner-1 {
@@ -226,6 +229,7 @@ h2, h3, h4, h5 {
 }
 
 .open-call-section {
+    position: relative;
     display: flex;
     background-color: #FCF9F4;
     color: black;
@@ -235,11 +239,29 @@ h2, h3, h4, h5 {
     background-repeat: no-repeat;
 }
 
+.open-call-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(252, 249, 244, 0.94) 0%,
+        rgba(252, 249, 244, 0.82) 34%,
+        rgba(252, 249, 244, 0.48) 60%,
+        rgba(252, 249, 244, 0.08) 100%
+    );
+    pointer-events: none;
+}
+
 .open-call-heading {
+    position: relative;
+    z-index: 1;
     width: 40%;
 }
 
 .open-call-text-conteiner {
+    position: relative;
+    z-index: 1;
     width: 60%;
     margin: 10vh 0 5vh;
     display: flex;
@@ -465,7 +487,7 @@ footer div {
         font-size: 1.8rem;
         margin-top: 240px;
         margin-left: 5vw;
-        width: 37%;
+        width: 50%;
         padding-right: 0;
     }
 
@@ -517,7 +539,7 @@ footer div {
     }
 
     .about-section > div {
-        font-size: 1.3rem;
+        font-size: clamp(0.98rem, 0.9rem + 0.45vw, 1.15rem);
     }
 
     .about-section-text-conteiner-1 p:nth-child(2),
@@ -527,8 +549,7 @@ footer div {
 
     .open-call-text-conteiner {
         font-size: 1.6rem;
-        width: 300px;
-        margin-top: 20vh;
+        margin-top: 7rem;
     }
 
     .films-list-item {
@@ -641,13 +662,13 @@ footer div {
 
     .about-section-text-conteiner-1 {
         padding: 1.25rem 1rem;
-        font-size: 1.1rem;
-        line-height: 1.45;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 
     .about-section-text-conteiner-2, .about-section-text-conteiner-3 {
         padding: 2rem 1rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.5;
     }
 
@@ -689,16 +710,16 @@ footer div {
     }
 
     .open-call-text-conteiner {
-        margin: 22vh 7vw 0;
+        margin-left: 7vw 0;
         font-size: 1.2em;
         line-height: 1.45;
         width: 73%;
     }
 
     .open-call-text-conteiner .btn {
-        margin: 5em 0 2em;
-        width: 200px;
-        font-size: 1em;
+        margin: 2rem 0;
+        width: 90%;
+        font-size: 0.95rem;
     }
 
     .films-heading {
