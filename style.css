@@ -13,6 +13,19 @@
     src: url(fonts/PT_Serif/PTSerif-Bold.ttf);
 }
 
+:root {
+    --color-bg: #322E2B;
+    --color-surface: #FCF9F4;
+    --color-surface-rgb: 252, 249, 244;
+    --color-text-dark: #000000;
+    --color-text-body-dark: #322E2B;
+    --color-text-light: #FCF9F4;
+    --color-accent: #A43D3E;
+    --color-accent-hover: #e23f42;
+    --color-white: #ffffff;
+    --color-overlay-dark: rgba(0, 0, 0, 0.7);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -24,13 +37,13 @@ html {
 }
 
 ::selection {
-    color: #FCF9F4;
-    background-color: #A43D3E;
+    color: var(--color-text-light);
+    background-color: var(--color-accent);
 }
 
 body {
-    background-color: #322E2B;
-    color: #FCF9F4;
+    background-color: var(--color-bg);
+    color: var(--color-text-light);
     font-size: 16px;
 }
 
@@ -56,7 +69,7 @@ header::before {
 }
 
 h1 {
-    font-size: clamp(1.5rem, 7vw, 7rem);
+    font-size: clamp(2rem, 7vw, 7rem);
     font-family: "MorfinSans";
     letter-spacing: 0.3rem;
 }
@@ -82,7 +95,7 @@ h1 {
 
 .igraya-so-vremenem p {
     font-family: "MorfinSans";
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(2rem, 4vw, 2rem);
     letter-spacing: clamp(0.3rem, 1.4vw, 1.6rem);
     line-height: 1.2;
 }
@@ -94,8 +107,8 @@ h1 {
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 2rem;
     align-items: end;
-    background-color: #FCF9F4;
-    color: #322E2B;
+    background-color: var(--color-surface);
+    color: var(--color-text-body-dark);
 }
 
 .page-navigation h1 {
@@ -116,25 +129,25 @@ h1 {
 
 .navigation-links a {
     text-decoration: none;
-    color: #322E2B;
+    color: var(--color-text-body-dark);
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     transition: color 250ms;
 }
 
 .navigation-links a:hover {
-    color: #A43D3E;
+    color: var(--color-accent);
 }
 
 .red {
-    color: #A43D3E;
+    color: var(--color-accent);
 }
 
 .btn {
-    background-color: #A43D3E;
+    background-color: var(--color-accent);
     border: none;
     border-radius: 50px;
     font-family: "MorfinSans";
-    color: white;
+    color: var(--color-white);
     font-size: clamp(1.4rem, 3.5vw, 28px);
     padding: 20px;
     width: 300px;
@@ -145,20 +158,20 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #e23f42;
+    background-color: var(--color-accent-hover);
 }
 
 .about-section {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     font-family: "PT-Serif";
-    background-color: #FCF9F4;
-    color: black;
+    background-color: var(--color-surface);
+    color: var(--color-text-dark);
 }
 
 .about-section > div {
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    border-right: 2px solid var(--color-text-dark);
+    border-bottom: 2px solid var(--color-text-dark);
     font-size: clamp(1rem, 0.82rem + 0.7vw, 1.35rem);
     line-height: 1.5;
 }
@@ -211,12 +224,12 @@ h2, h3, h4, h5 {
 
 .about-section-text-conteiner-2 {
     grid-column: span 4;
-    padding: clamp(1.5rem, 3vw, 2.5rem);
+    padding: clamp(1.5rem, 7vw, 4.3rem);
 }
 
 .about-section-text-conteiner-3 {
     grid-column: span 4;
-    padding: clamp(1.5rem, 3vw, 2.5rem);
+    padding: clamp(1.5rem, 7vw, 4.3rem);
     min-height: 19rem;
 }
 
@@ -231,8 +244,8 @@ h2, h3, h4, h5 {
 .open-call-section {
     position: relative;
     display: flex;
-    background-color: #FCF9F4;
-    color: black;
+    background-color: var(--color-surface);
+    color: var(--color-text-dark);
     background-image: url(images/backgrounds/open-call.webp);
     background-size: contain;
     background-position: left;
@@ -245,10 +258,10 @@ h2, h3, h4, h5 {
     inset: 0;
     background: linear-gradient(
         90deg,
-        rgba(252, 249, 244, 0.94) 0%,
-        rgba(252, 249, 244, 0.82) 34%,
-        rgba(252, 249, 244, 0.48) 60%,
-        rgba(252, 249, 244, 0.08) 100%
+        rgba(var(--color-surface-rgb), 0.94) 0%,
+        rgba(var(--color-surface-rgb), 0.82) 34%,
+        rgba(var(--color-surface-rgb), 0.48) 60%,
+        rgba(var(--color-surface-rgb), 0.08) 100%
     );
     pointer-events: none;
 }
@@ -286,7 +299,7 @@ h2, h3, h4, h5 {
 
 .open-call-text-conteiner ul li::before {
     content: "//";
-    color: #A43D3E;
+    color: var(--color-accent);
     font-size: 1.2em;
 }
 
@@ -314,11 +327,11 @@ h2, h3, h4, h5 {
 }
 
 .film-poster-conteiner {
-    background-color: #FCF9F4;
+    background-color: var(--color-surface);
     width: 100%;
     max-width: 400px;
     height: 220px;
-    border: 20px solid #FCF9F4;
+    border: 20px solid var(--color-surface);
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -326,7 +339,7 @@ h2, h3, h4, h5 {
 
 .film-poster {
     object-fit: contain;
-    color: #A43D3E;
+    color: var(--color-accent);
 }
 
 .films-list-text {
@@ -374,7 +387,7 @@ h2, h3, h4, h5 {
 
 footer {
     position: relative;
-    border-top: 1px solid #FCF9F4;
+    border-top: 1px solid var(--color-text-light);
     display: flex;
 }
 
@@ -386,7 +399,7 @@ footer div {
     font-size: 4em;
     font-family: "MorfinSans";
     width: 85%;
-    margin: 10vh auto 0;
+    margin: 8rem auto 0;
 }
 
 .look-for-anons p:last-of-type {
@@ -434,10 +447,6 @@ footer div {
         width: auto;
         align-items: flex-end;
         gap: 0.35rem;
-    }
-    
-    .page-navigation h1 {
-        font-size: clamp(1.9rem, 4.6vw, 3.4rem);
     }
     
     .igraya-so-vremenem {
@@ -521,7 +530,7 @@ footer div {
 
     .look-for-anons {
         font-size: 3rem;
-        margin: 5vh auto 0;
+        margin: 5rem auto 0;
     }
 
     .socials {
@@ -572,7 +581,7 @@ footer div {
     .look-for-anons {
         font-size: 3em;
         line-height: 1.5em;
-        margin: 15vh auto 0;
+        margin: 7rem auto 0;
         width: 60vw;
     }
 
@@ -772,7 +781,7 @@ footer div {
         display: block;
         position: absolute;
         top: 0;
-        color: #A43D3E;
+        color: var(--color-accent);
         background: none;
         border: none;
         font-size: 2rem;
@@ -790,7 +799,7 @@ footer div {
     }
     
     .next:hover .prev:hover {
-        background-color: rgba(0,0,0,0.7);
+        background-color: var(--color-overlay-dark);
     }
 
     .look-for-anons {
