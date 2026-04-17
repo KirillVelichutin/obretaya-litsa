@@ -641,7 +641,7 @@ footer div {
 
     .igraya-so-vremenem h1 {
         max-width: 9ch;
-        font-size: clamp(2.1rem, 10vw, 3.2rem);
+        font-size: clamp(2rem, 7vw, 7rem);
         letter-spacing: 0.08rem;
         line-height: 0.95;
     }
