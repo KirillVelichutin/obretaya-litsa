@@ -1,16 +1,16 @@
 @font-face {
     font-family: "MorfinSans";
-    src: url(fonts/MorfinSans/MorfinSans-Regular.ttf);
+    src: url(fonts/MorfinSans/MorfinSans-Regular.woff);
 }
 
 @font-face {
     font-family: "PT-Serif-Regular";
-    src: url(fonts/PT_Serif/PTSerif-Regular.ttf);
+    src: url(fonts/PT_Serif/PTSerif-Regular.woff);
 }
 
 @font-face {
     font-family: "PT-Serif-Bold";
-    src: url(fonts/PT_Serif/PTSerif-Bold.ttf);
+    src: url(fonts/PT_Serif/PTSerif-Bold.woff);
 }
 
 :root {
